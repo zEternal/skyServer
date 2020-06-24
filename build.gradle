@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.star.tcs'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+ext{
+
+    springMVCVersion        = '5.1.14.RELEASE'
+    springContextVersion    = '5.1.14.RELEASE'
+    log4jVersion            = '2.13.0'
+    jacksonVersion          = '2.9.5'
+}
+dependencies {
+
+    compile group: 'org.opentcs', name: 'opentcs-api-base', version: '4.17.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
+
+    //Spring
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springMVCVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springContextVersion
+    compile group: 'org.springframework', name: 'spring-jdbc', version: springContextVersion
+    compile group: 'org.springframework', name: 'spring-tx', version: springContextVersion
+    compile group: 'org.springframework', name: 'spring-aspects', version: springContextVersion
+
+    //json转java对象
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+
+    //mybatis
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.3'
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.4'
+
+    //mysql
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.47'
+
+    //servlet
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+}

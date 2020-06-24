@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'com.yhtos'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+ext{
+
+    springMVCVersion        = '5.1.14.RELEASE'
+    springContextVersion    = '5.1.14.RELEASE'
+    log4jVersion            = '2.13.0'
+    jacksonVersion          = '2.9.5'
+}
+dependencies {
+    //json转java对象
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
