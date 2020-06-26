@@ -11,6 +11,12 @@ public class Vehicle {
         starVehicleService.getPaths("Vehicle-01");
     }
 
+    @Test
+    public void testAll(){
+        StarVehicleService starVehicleService = new StarVehicleService();
+        starVehicleService.getPaths("Vehicle-01");
+    }
+
 
 
 }

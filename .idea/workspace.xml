@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c3de579-e9b8-4fe3-bdfe-6da69204b5d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/service/TestOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/star/tcs/service/impl/StarTransportOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/star/tcs/service/impl/StarTransportOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/star/tcs/service/impl/StarVehicleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/star/tcs/service/impl/StarVehicleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.jsont.ArrO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.jsont.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.jsont.ArrO.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/star/tcs/service/impl/StarTransportOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/star/tcs/service/impl/StarTransportOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/star/tcs/service/impl/StarVehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/star/tcs/service/impl/StarVehicleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/service/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/service/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +65,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/js" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/js" />
       <recent name="$PROJECT_DIR$/src/main/java/com/star/tcs/bean" />
       <recent name="$PROJECT_DIR$/src/main/java/com/star/tcs/dao" />
       <recent name="$PROJECT_DIR$/src/main/java/com/star/tcs/service/impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Vehicle.testPath">
+  <component name="RunManager" selected="Gradle.TestOrder.getAll">
     <configuration name="ArrO.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -115,6 +99,26 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/SkyJson" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.yhtos.test.JsonTest.testj&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestOrder.getAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.test.service.TestOrder.getAll&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -229,9 +233,11 @@
       <item itemvalue="Tomcat Server.Tomcat 8.5.49" />
       <item itemvalue="Gradle.ArrO.test" />
       <item itemvalue="Gradle.Vehicle.testPath" />
+      <item itemvalue="Gradle.TestOrder.getAll" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestOrder.getAll" />
         <item itemvalue="Gradle.Vehicle.testPath" />
         <item itemvalue="Gradle.ArrO.test" />
         <item itemvalue="Gradle.JsonTest.testj" />
@@ -287,7 +293,7 @@
       <workItem from="1592993363800" duration="2538000" />
       <workItem from="1593073344482" duration="6347000" />
       <workItem from="1593080118638" duration="2711000" />
-      <workItem from="1593140974139" duration="16733000" />
+      <workItem from="1593140974139" duration="18337000" />
     </task>
     <servers />
   </component>
@@ -317,29 +323,29 @@
       <screen x="65" y="27" width="1535" height="873" />
     </state>
     <state x="709" y="261" width="424" height="518" key="FileChooserDialogImpl/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593095808527" />
-    <state width="1481" height="258" key="GridCell.Tab.0.bottom" timestamp="1593163079878">
+    <state width="1481" height="216" key="GridCell.Tab.0.bottom" timestamp="1593167511397">
       <screen x="65" y="27" width="1535" height="873" />
     </state>
     <state width="1261" height="165" key="GridCell.Tab.0.bottom/65.27.1535.873/1600.0.1600.900@1600.0.1600.900" timestamp="1592302910453" />
-    <state width="1481" height="258" key="GridCell.Tab.0.bottom/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593163079878" />
+    <state width="1481" height="216" key="GridCell.Tab.0.bottom/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593167511397" />
     <state width="1801" height="275" key="GridCell.Tab.0.bottom/65.27.1855.1053/1920.0.1366.768@65.27.1855.1053" timestamp="1590415643715" />
-    <state width="1481" height="258" key="GridCell.Tab.0.center" timestamp="1593163079878">
+    <state width="1481" height="216" key="GridCell.Tab.0.center" timestamp="1593167511397">
       <screen x="65" y="27" width="1535" height="873" />
     </state>
     <state width="1261" height="165" key="GridCell.Tab.0.center/65.27.1535.873/1600.0.1600.900@1600.0.1600.900" timestamp="1592302910453" />
-    <state width="1481" height="258" key="GridCell.Tab.0.center/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593163079878" />
+    <state width="1481" height="216" key="GridCell.Tab.0.center/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593167511397" />
     <state width="1801" height="275" key="GridCell.Tab.0.center/65.27.1855.1053/1920.0.1366.768@65.27.1855.1053" timestamp="1590415643715" />
-    <state width="1481" height="258" key="GridCell.Tab.0.left" timestamp="1593163079878">
+    <state width="1481" height="216" key="GridCell.Tab.0.left" timestamp="1593167511396">
       <screen x="65" y="27" width="1535" height="873" />
     </state>
     <state width="1261" height="165" key="GridCell.Tab.0.left/65.27.1535.873/1600.0.1600.900@1600.0.1600.900" timestamp="1592302910453" />
-    <state width="1481" height="258" key="GridCell.Tab.0.left/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593163079878" />
+    <state width="1481" height="216" key="GridCell.Tab.0.left/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593167511396" />
     <state width="1801" height="275" key="GridCell.Tab.0.left/65.27.1855.1053/1920.0.1366.768@65.27.1855.1053" timestamp="1590415643715" />
-    <state width="1481" height="258" key="GridCell.Tab.0.right" timestamp="1593163079878">
+    <state width="1481" height="216" key="GridCell.Tab.0.right" timestamp="1593167511397">
       <screen x="65" y="27" width="1535" height="873" />
     </state>
     <state width="1261" height="165" key="GridCell.Tab.0.right/65.27.1535.873/1600.0.1600.900@1600.0.1600.900" timestamp="1592302910453" />
-    <state width="1481" height="258" key="GridCell.Tab.0.right/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593163079878" />
+    <state width="1481" height="216" key="GridCell.Tab.0.right/65.27.1535.873/1600.0.1600.900@65.27.1535.873" timestamp="1593167511397" />
     <state width="1801" height="275" key="GridCell.Tab.0.right/65.27.1855.1053/1920.0.1366.768@65.27.1855.1053" timestamp="1590415643715" />
     <state width="1207" height="145" key="GridCell.Tab.1.bottom" timestamp="1593161974690">
       <screen x="65" y="27" width="1535" height="873" />

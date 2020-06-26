@@ -6,3 +6,11 @@
 2020-06-26 at 17:14:03 CST INFO  com.star.tcs.service.impl.StarVehicleService 97 getPaths - 车辆名称：Vehicle-01
 2020-06-26 at 17:16:28 CST INFO  com.star.tcs.service.impl.StarVehicleService 97 getPaths - 车辆名称：Vehicle-01
 2020-06-26 at 17:18:01 CST INFO  com.star.tcs.service.impl.StarVehicleService 97 getPaths - 车辆名称：Vehicle-01
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQY4YBX34Z54APK77QT7VMY
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQXRYT0D6EFR83AW9780G2R
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQYKHPQ4BXHWB2RKHNENTMT
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQYB0E0B5SQ58KV9W4KF8P6
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQYPESFM5YJJJ657H8TSWAH
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQYKSRFA5K6SPFDERJ43RNS
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQY5EJFJH6D07ZP5GSZP07A
+2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQXWPX82ESKKAR5WZFPA9M6

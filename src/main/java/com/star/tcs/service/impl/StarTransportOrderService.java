@@ -28,10 +28,7 @@ import org.opentcs.data.order.TransportOrder;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class StarTransportOrderService implements IStarTransportOrderService {
 
@@ -116,12 +113,22 @@ public class StarTransportOrderService implements IStarTransportOrderService {
 
     @Override
     public String getAllOrder() {
-        String all = "[" +
+        /*String all = "[" +
                 "{\"order_id\":\"0010101010\",\"user_id\":\"1001\",\"order_num\":\"10254\",\"create_time\":\"102\",\"order_price\":\"4141\",\"detail\":\"0000\"}," +
                 "{\"order_id\":\"0010101011\",\"user_id\":\"1002\",\"order_num\":\"102544\",\"create_time\":\"102\",\"order_price\":\"4141\",\"detail\":\"0000\"}," +
                 "{\"order_id\":\"0010101012\",\"user_id\":\"1001\",\"order_num\":\"1024\",\"create_time\":\"102\",\"order_price\":\"4141\",\"detail\":\"0000\"}" +
                 "]";
-        return all;
+
+
+        return all;*/
+
+
+        Set<TransportOrder> all = orderService.fetchObjects(TransportOrder.class);
+        for (TransportOrder order : all) {
+            logger.info("订单：" + order.getName());
+        }
+        return "";
+
     }
 
     @Override
