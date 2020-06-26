@@ -48,6 +48,10 @@
       </script>
   </head>
   <body>
+      <a href="orders.html"><button id="order">order</button></a>
+      <a href="view.html"><button id="car">car</button></a>
+      <a href="maps.html"><button id="map">map</button></a>
+
       <button id="btn">fasong</button>
       <a href="user/findAll">ceshi</a>
       <br><br><br><br><br>

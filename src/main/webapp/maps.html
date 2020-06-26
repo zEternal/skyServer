@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0", maximum-scale=1, user-scalable=no">
+        <title>map</title>
+        <script src="js/jquery-1.12.4.js"></script>
+        <style type="text/css">
+            table{
+                width: 100%;
+            }
+            td{
+                height: 50px;
+            }
+
+
+        </style>
+    </head>
+
+
+    <body>
+        <div id="head" style="height: 150px;width: 100%; border: 1px solid black;min-width:1080px">
+            <div style="width: 400px;margin: 60px auto;height: 50px ">
+                <h1 style="text-shadow: 5px 5px 5px #FF0000">基于MQTT的AGV小车信息</h1>
+            </div>
+        </div>
+
+        <div id="body" style="height: 550px;width: 100%;min-width:1080px">
+            <div style="height: 100%;width:900px;margin: 0 auto; border: 1px solid black">
+
+                <div style="height: 528px;width: 878px;margin-left:10px;margin-top: 10px;border: 1px solid black;float: left">
+                    <div style="height: 40px;width: 100%; background-color: #dadada;margin: 0 auto">
+                        <div style="height: 40px;width: 80%; background-color: #dadada;margin: 0 auto">
+                            <div style="float: left;width: 25%;margin-top: 5px" id="car " align="center"><span>地图</span></div>
+                            <div style="float: left;width: 15%;margin-top: 5px"><span><button id="refresh1">更新</button></span></div>
+                            <div style="float: left;width: 30%;margin-top: 5px" align="center"><a href="view.html">返回</a></div>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: -1px">
+
+                    <div id="carContent" style="height: 470px;width: 80% ; margin:0 auto;overflow: scroll">
+                        <div id="parent"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="foot" style="height: 100px;width: 100%; border: 1px solid black;min-width:1080px">
+            <div style="height: 30px;width: 20%;float: right;margin-top: 70px" >
+                <p style="margin-top: 1px">济南大学泉城学院</p>
+            </div>
+        </div>
+
+        <script>
+
+            var jsonArr1 = [
+                {
+                    "number": "000",
+                    "before": ["null", "null"],
+                    "now": "null",
+                    "after": ["null", "null", "null", "null", "null", "null"]
+                }
+            ]
+
+
+
+            $(function() {
+                initView(jsonArr1);
+
+                $("#refresh1").click(function () {
+                    $('#parent').html("");
+                    getdata();
+                })
+
+                function initView(json) {
+                    for (i in json) {
+
+                        var carTitle = "carTitle";
+                        createDivCarTitle("parent", carTitle + json[i]["number"])
+
+                        var carContent = "carContent";
+                        createDivCarContent("parent", carContent + json[i]["number"]);
+
+                        var siteNumber = json[i].after.length + json[i].before.length + 1;
+                        console.log("数量：" + siteNumber);
+
+                        var parentSite = carContent + json[i]["number"];
+                        console.log(parentSite);
+                        for (j in json[i].before) {
+                            createSiteBefore(parentSite, json[i].before[j])
+                            createImg(parentSite)
+                        }
+                        createSiteCurrent(parentSite, json[i]["now"])
+                        createImg(parentSite)
+                        for (j in json[i].after) {
+                            createSiteAfter(parentSite, json[i].after[j])
+                            var length = json[i].after.length - 1;
+                            if (j == length) {
+                                console.log("last");
+                            } else {
+                                createImg(parentSite)
+                            }
+                        }
+                    }
+                }
+
+                function getdata() {
+                    $.ajax({
+                        type: "POST",
+                        url: "vehicle/getMap",
+                        dataType: "JSON",
+                        error: function (status, error) {
+                            console.log("错误 " + error);
+                            alert("错误")
+                        },
+                        success: function (data, status) {
+                            console.log("返回的结果 " + data);
+                            var list = data;
+                            initView(list);
+                        }
+
+                    })
+                }
+
+                function createDivCarTitle(obj, id) {//此id是创建的div的id
+                    var parent = document.getElementById(obj);
+                    //添加 div
+                    var div = document.createElement("div");
+                    //设置 div 属性，如 id
+                    div.setAttribute("id", id);
+                    div.setAttribute("style", "width: 100%;height: 20px; margin: 10px;background-color: #EFEFEF");//一次添加多个
+                    div.innerHTML = "小车" + id;
+                    parent.appendChild(div);
+                }
+
+                function createDivCarContent(obj, id) {//此id是创建的div的id
+                    var parent = document.getElementById(obj);
+                    //添加 div
+                    var div = document.createElement("div");
+                    //设置 div 属性，如 id
+                    div.setAttribute("id", id);
+                    div.setAttribute("style", "width: 100%;height: 120px; margin: 10px;");//一次添加多个
+                    parent.appendChild(div);
+                }
+
+
+                function createSiteBefore(obj, site) {//obj是父类的id
+                    var parent = document.getElementById(obj);
+                    //添加 div
+                    var div = document.createElement("div");
+                    //设置 div 属性，如 id
+                    //div.setAttribute("id", id);
+                    div.setAttribute("style", "width: 50px;height: 50px; float: left;background-color: #07C160;margin: 5px");//一次添加多个
+                    div.innerHTML = "地点" + site;
+                    parent.appendChild(div);
+                }
+
+                function createSiteCurrent(obj, site) {//obj是父类的id
+                    var parent = document.getElementById(obj);
+                    //添加 div
+                    var div = document.createElement("div");
+                    //设置 div 属性，如 id
+                    //div.setAttribute("id", id);
+                    div.setAttribute("style", "width: 70px;height: 50px; float: left; background-color: #FE8A03;margin: 5px");//一次添加多个
+                    div.innerHTML = "当前位置" + site;
+                    parent.appendChild(div);
+                }
+
+                function createSiteAfter(obj, site) {//obj是父类的id
+                    var parent = document.getElementById(obj);
+                    //添加 div
+                    var div = document.createElement("div");
+                    //设置 div 属性，如 id
+                    //div.setAttribute("id", id);
+                    div.setAttribute("style", "width: 50px;height: 50px; float: left;background-color: #C1C1C1;;margin: 5px");//一次添加多个
+                    div.innerHTML = "地点" + site;
+                    parent.appendChild(div);
+                }
+
+                function createImg(obj) {
+                    var parent = document.getElementById(obj);
+                    //添加 div
+                    var div = document.createElement("div");
+                    div.setAttribute("style", " float: left;");//一次添加多个
+                    //添加 img
+                    var img = document.createElement("img");
+                    img.setAttribute("style", "width: 50px;height: 30px;margin: 10px 0px;")
+                    //设置 img 图片地址
+                    img.src = "img/arrow.png";
+                    div.appendChild(img);
+                    parent.appendChild(div);
+                }
+            })
+
+        </script>
+
+    </body>
+
+</html>
