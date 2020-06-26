@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0", maximum-scale=1, user-scalable=no">
+        <title>order</title>
+        <script src="js/jquery-1.12.4.js"></script>
+        <style type="text/css">
+            table{
+                width: 100%;
+            }
+            td{
+                height: 50px;
+            }
+
+
+        </style>
+    </head>
+
+
+    <body>
+        <div id="head" style="height: 150px;width: 100%; border: 1px solid black;min-width:1080px">
+            <div style="width: 400px;margin: 60px auto;height: 50px ">
+                <h1 style="text-shadow: 5px 5px 5px #FF0000">基于MQTT的AGV小车信息</h1>
+            </div>
+        </div>
+
+        <div id="body" style="height: 550px;width: 100%;min-width:1080px">
+            <div style="height: 100%;width:900px;margin: 0 auto; border: 1px solid black">
+
+                <div style="height: 528px;width: 878px;margin-left:10px;margin-top: 10px;border: 1px solid black;float: left">
+                    <div style="height: 40px;width: 100%; background-color: #dadada;margin: 0 auto">
+                        <div style="height: 40px;width: 80%; background-color: #dadada;margin: 0 auto">
+                            <div style="float: left;width: 25%;margin-top: 5px" id="car " align="center"><span>查看订单</span></div>
+                            <div style="float: left;width: 15%;margin-top: 5px"><span><button id="refresh1">更新</button></span></div>
+                            <div style="float: left;width: 30%;margin-top: 5px" align="center"><a href="view.html">返回</a></div>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: -1px">
+
+                    <div id="carContent" style="height: 470px;width: 80% ; margin:0 auto;overflow: scroll">
+                        <div id="info">
+                            <table border="1" cellspacing="0" cellpadding="0">
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="foot" style="height: 100px;width: 100%; border: 1px solid black;min-width:1080px">
+            <div style="height: 30px;width: 20%;float: right;margin-top: 70px" >
+                <p style="margin-top: 1px">济南大学泉城学院</p>
+            </div>
+        </div>
+
+        <script>
+            //$(document).ready(function () {
+            $(function(){
+                createTable(jsonArr,"order_id","user_id","order_num","create_time","order_price","detail",$("table"));
+
+                $("#refresh1").click(function () {
+                    getdata();
+                })
+            })
+
+            var jsonArr = [
+                {
+                    "order_id":"null","user_id":"null","order_num":"null","create_time":"null","order_price":"null","detail":"null"
+                }
+            ]
+
+            function createTable(json,col1,col2,col3,col4,col5,col6,_obj){
+                if(json.length < 1){
+                    return;
+                }
+                var html = "";
+                var trHtml = "";
+
+                html="<tr>"+"<td>" +"order_id" + "</td>"+"<td>" +"user_id" + "</td>"+"<td>" +"order_num" + "</td>" +"<td>" +"create_time" + "</td>"
+                    +"<td>" +"order_price" + "</td>"+"<td>" +"detail" + "</td>" +"</tr>";
+                for(i in json) {
+                    html += "<td>" + json[i][col1] + "</td>"+"<td>" + json[i][col2] + "</td>"+"<td>" + json[i][col3] + "<td>" + json[i][col4] + "</td>"
+                        + "<td>" + json[i][col5] + "</td>"+ "<td>" + json[i][col6] + "</td>";
+                    html = "<tr>"+html+"</tr>";
+                }
+                _obj.html(html);
+            }
+
+
+            function getdata(){
+                /*var id= $("#carid").text();
+                console.log("id" + id);*/
+                $.ajax({
+                    type: "POST",
+                    url: "order/getAll",
+                    data: JSON.stringify({"car":1}),
+                    dataType:"JSON",
+                    error: function (status, error) {
+                        console.log("错误 " + error);
+                        alert("错误")
+                    },
+                    success: function (data, status) {
+                        console.log("返回的结果 " + data);
+
+                        var list = data;
+
+                        createTable(list,"order_id","user_id","order_num","create_time","order_price","detail",$("table"));
+                    }
+
+                })
+            }
+
+            //});
+
+        </script>
+
+
+    </body>
+
+</html>

@@ -66,7 +66,12 @@ public class StarVehicleService implements IStarVehicleService {
 
     @Override
     public String getAllVehicle() {
-        return null;
+
+        String allv = "[{\"car_id\":\"vehicle-01\",\"car_electric\":\"99\",\"car_state\":\"0\",\"carry_num\":\"null\"}," +
+                "{\"car_id\":\"vehicle-02\",\"car_electric\":\"99\",\"car_state\":\"0\",\"carry_num\":\"null\"}," +
+                "{\"car_id\":\"vehicle-03\",\"car_electric\":\"99\",\"car_state\":\"0\",\"carry_num\":\"null\"}]";
+
+        return allv;
     }
 
     @Override

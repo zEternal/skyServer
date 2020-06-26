@@ -1,5 +1,12 @@
 package com.star.tcs.controller;
-
+/**
+ * Title: VehicleController
+ * 功能：车辆信息Controller
+ * author: star
+ * Creation time:
+ * Modification time：2020-6-25 17：00
+ * version： V1.0
+ */
 import com.star.tcs.service.IStarVehicleService;
 import com.star.tcs.service.impl.StarVehicleService;
 import org.springframework.stereotype.Controller;
@@ -20,6 +27,16 @@ public class VehicleController {
         starVehicleService = new StarVehicleService();
         String cp = starVehicleService.getCurrentPositionByName(name);
         return "";
+    }
+
+    @RequestMapping("/getAll")
+    @ResponseBody
+    public String getAll(){
+
+        starVehicleService = new StarVehicleService();
+        String cp = starVehicleService.getAllVehicle();
+        System.out.println("----" + cp);
+        return cp;
     }
 
 }

@@ -115,7 +115,12 @@ public class StarTransportOrderService implements IStarTransportOrderService {
 
     @Override
     public String getAllOrder() {
-        return null;
+        String all = "[" +
+                "{\"order_id\":\"0010101010\",\"user_id\":\"1001\",\"order_num\":\"10254\",\"create_time\":\"102\",\"order_price\":\"4141\",\"detail\":\"0000\"}," +
+                "{\"order_id\":\"0010101011\",\"user_id\":\"1002\",\"order_num\":\"102544\",\"create_time\":\"102\",\"order_price\":\"4141\",\"detail\":\"0000\"}," +
+                "{\"order_id\":\"0010101012\",\"user_id\":\"1001\",\"order_num\":\"1024\",\"create_time\":\"102\",\"order_price\":\"4141\",\"detail\":\"0000\"}" +
+                "]";
+        return all;
     }
 
     @Override
