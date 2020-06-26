@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jsont.ArrO" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-26T06:21:05" hostname="eternal-HP-Laptop-15q-bu1xx" time="0.127">
-  <properties/>
-  <testcase name="test" classname="com.jsont.ArrO" time="0.127"/>
-  <system-out><![CDATA[[{"number":"001","before":["1","2","3"],"now":"4","after":["5","6","7","8"]},{"number":"002","before":["1","2","3"],"now":"4","after":["5","6","7","8"]}]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

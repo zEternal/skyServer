@@ -21,6 +21,7 @@ import org.opentcs.components.kernel.services.TransportOrderService;
 import org.opentcs.data.TCSObjectReference;
 import org.opentcs.data.model.Vehicle;
 import org.opentcs.data.order.DriveOrder;
+import org.opentcs.data.order.OrderSequence;
 import org.opentcs.data.order.Route;
 import org.opentcs.data.order.TransportOrder;
 
@@ -154,6 +155,15 @@ public class StarTransportOrderService implements IStarTransportOrderService {
     public String getStateByName(String orderName) {
         transportOrder = getTransportOrder(orderName);
         return transportOrder.getState().name();
+    }
+
+    //根据订单引用
+    public void getTo(TCSObjectReference<TransportOrder> transportOrder){
+        //返回TCSObject给定类的单个。
+        TransportOrder too = orderService.fetchObject(TransportOrder.class,transportOrder);
+        System.out.println("orser:::" + too.getName());
+
+        System.out.println("path:::" + getPathByName(too.getName()));
     }
 
     public static TransportOrder getTransportOrder(String name) {

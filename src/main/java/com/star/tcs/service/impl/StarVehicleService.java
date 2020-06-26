@@ -13,8 +13,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.opentcs.access.KernelServicePortal;
 import org.opentcs.components.kernel.services.VehicleService;
+import org.opentcs.data.TCSObjectReference;
 import org.opentcs.data.model.Triple;
 import org.opentcs.data.model.Vehicle;
+import org.opentcs.data.order.DriveOrder;
+import org.opentcs.data.order.OrderSequence;
+import org.opentcs.data.order.TransportOrder;
+
+import java.util.List;
+
+import static java.util.Objects.requireNonNull;
 
 public class StarVehicleService implements IStarVehicleService {
 
@@ -82,7 +90,36 @@ public class StarVehicleService implements IStarVehicleService {
         return velocity;
     }
 
+    //返回指定车辆正在处理得订单序列
+    public void getPaths(String name){
 
+        vehicle = getVehicle(name);
+        logger.info("车辆名称：" + vehicle.getName());
+
+        //返回对该车辆当前正在处理的订单序列的引用。
+        TCSObjectReference<TransportOrder> transportOrder= vehicle.getTransportOrder();
+        requireNonNull(transportOrder,"orderSequence nullllllll");
+        StarTransportOrderService starTransportOrderService = new StarTransportOrderService();
+        starTransportOrderService.getTo(transportOrder);
+        //返回TCSObject给定类的单个。
+        /*OrderSequence os = vehicleService.fetchObject(OrderSequence.class,orderSequence);
+        //返回组成该序列的订单列表。
+        List<TCSObjectReference<TransportOrder>> list = os.getOrders();
+        for (TCSObjectReference<TransportOrder> tot : list) {
+            TransportOrder tOrder = vehicleService.fetchObject(TransportOrder.class,tot);
+            //DriveOrder driveOrder = tOrder.getCurrentDriveOrder();
+            String orderName =  tOrder.getName();
+            logger.info("订单名称：" + orderName);
+        }*/
+
+    }
+
+
+    /**
+     * 获取车辆
+     * @param name 车名
+     * @return 车辆类
+     */
     public static Vehicle getVehicle(String name) {
         return vehicleService.fetchObject(Vehicle.class,name);
     }
