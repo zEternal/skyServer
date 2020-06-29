@@ -35,7 +35,7 @@ public interface IStarTransportOrderService {
      * @param aims 目的位置
      * @return
      */
-    public String orderQueue(String locationName,String aims);
+    public String orderQueue(String locationName,String loType,String aims,String aiType);
 
     /**
      * 功能：根据订单名称返回订单创建时间

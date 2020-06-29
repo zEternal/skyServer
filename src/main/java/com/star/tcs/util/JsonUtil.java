@@ -26,6 +26,7 @@ public class JsonUtil<T> {
 
         ObjectMapper mapper = new ObjectMapper();
         try {
+            //return mapper.readValue(str, t.getClass());
             return mapper.readValue(str, t.getClass());
         }
         catch (JsonProcessingException ex) {

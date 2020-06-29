@@ -96,11 +96,13 @@ public class StarTransportOrderService implements IStarTransportOrderService {
     }
 
     @Override
-    public String orderQueue(String locationName,String aims) {
+    public String orderQueue(String locationName,String loType,String aims,String aiType) {
 
         List<DestinationCreationTO> destinations = new LinkedList<>();
-        destinations.add(new DestinationCreationTO(locationName, "NOP"));
-        destinations.add(new DestinationCreationTO(aims, "NOP"));
+        //destinations.add(new DestinationCreationTO(locationName, "NOP"));
+        //destinations.add(new DestinationCreationTO(aims, "NOP"));
+        destinations.add(new DestinationCreationTO(locationName, loType));
+        destinations.add(new DestinationCreationTO(aims, aiType));
         TransportOrderCreationTO orderTO
                 = new TransportOrderCreationTO("MyTransportOrder", destinations);
         // Optionally, express that the actual/full name of the order should be

@@ -1,8 +1,4 @@
+开始连接
 ----MQTT connection succeeded
 -----------------------
 订阅dintyue  topic : :kaim
-+-+-MqttMessageListenerImpl--  Got the news
--+-Topic==kaim
--+-message==789
-c--SkyMqttCallback--  Called after completing the message delivery and receiving all confirmations.
-&## * publish topic : :kaim++++++++789

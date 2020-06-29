@@ -2,6 +2,8 @@ package com.jsont;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.star.tcs.bean.ClientJob;
+import com.star.tcs.util.JsonUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -59,5 +61,11 @@ public class ArrO {
         }
     }
 
+    @Test
+    public void testObj(){
+        String str = "{\"location\":\"lodf\",\"type\":\"124\"}";
+        JsonUtil jsonUtil = new JsonUtil();
+        //ClientJob job = jsonUtil.getObject(str,ClientJob.class);
+    }
 
 }

@@ -18,8 +18,8 @@ public class TestOrder {
     @Test
     public void create(){
         StarTransportOrderService orderService = new StarTransportOrderService();
-        String name  = orderService.orderQueue("Goods out 01","Goods in north 01");
-        logger.info("order*****"+name);
+        //String name  = orderService.orderQueue("Goods out 01","Goods in north 01");
+        //logger.info("order*****"+name);
         //Goods out 01     Storage 01
     }
 

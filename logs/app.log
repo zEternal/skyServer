@@ -28,3 +28,9 @@
 2020-06-28 at 20:29:15 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXEECX7H1YDT1GKCPTMZGN3
 2020-06-28 at 20:30:38 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXEGXVMD92MSSC1YCNQ8SQG
 2020-06-28 at 21:13:45 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXGZWPBNSVFAXQ2Q5CE6SPF
+2020-06-29 at 18:46:21 CST INFO  com.star.tcs.util.MqttMessageListenerImpl 24 messageArrived - ---订阅到：kaim:{"location":"Goods out 01","type":"NOP"}
+2020-06-29 at 18:46:21 CST INFO  com.star.tcs.util.MqttMessageListenerImpl 28 messageArrived - json转为对象ClientJob{location='Goods out 01', type='NOP'}
+2020-06-29 at 18:46:21 CST INFO  com.star.tcs.util.MqttMessageListenerImpl 32 messageArrived - 查目标位置：Supply{location='Goods out 01', aims='Storage 01', type='NOP'}
+2020-06-29 at 18:49:29 CST INFO  com.star.tcs.util.MqttMessageListenerImpl 24 messageArrived - ---订阅到：kaim:{"location":"Goods in north 02","type":"NOP"}
+2020-06-29 at 18:49:29 CST INFO  com.star.tcs.util.MqttMessageListenerImpl 28 messageArrived - json转为对象ClientJob{location='Goods in north 02', type='NOP'}
+2020-06-29 at 18:49:29 CST INFO  com.star.tcs.util.MqttMessageListenerImpl 32 messageArrived - 查目标位置：Supply{location='Goods in north 02', aims='Storage 01', type='NOP'}

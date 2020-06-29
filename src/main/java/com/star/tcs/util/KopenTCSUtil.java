@@ -1,12 +1,20 @@
 package com.star.tcs.util;
-
+/**
+ * Title: KopenTCSUtil
+ * 功能：openTCS内核服务工具类
+ * author: star
+ * Creation time: 2020-
+ * Modification time：
+ * version： V1.0
+ */
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.opentcs.access.KernelServicePortal;
 import org.opentcs.access.rmi.KernelServicePortalBuilder;
-import org.opentcs.access.rmi.services.RemoteKernelServicePortalProxy;
 import org.opentcs.components.kernel.services.PlantModelService;
 
 public class KopenTCSUtil {
-///L5i2K1a5I20
+    private static Logger logger = LogManager.getLogger(KopenTCSUtil.class);
     //Provides clients access to kernel services.提供客户端访问内核服务的权限。
     private static KernelServicePortal servicePortal = null;
     //private static RemoteKernelServicePortalProxy servicePortal = null;
@@ -20,8 +28,8 @@ public class KopenTCSUtil {
         //Get a reference to the plant model service...获取对工厂模型服务的参考...
         PlantModelService plantModelService = servicePortal.getPlantModelService();
         String modelName = plantModelService.getModelName();
-        System.out.println("----------------------");
-        System.out.println("modeName::::" + modelName);
+
+        logger.info("载入模型：" + modelName);
 
     }
 

@@ -10,7 +10,7 @@ import java.io.Serializable;
  * Modification time：
  * version： V1.0
  */
-public class ClientJob implements Serializable {
+public class ClientJob   {
     private String location;
     private String type;
 

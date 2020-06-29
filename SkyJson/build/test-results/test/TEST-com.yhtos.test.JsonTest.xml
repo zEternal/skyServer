@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.yhtos.test.JsonTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-25T14:05:02" hostname="eternal-HP-Laptop-15q-bu1xx" time="0.174">
+<testsuite name="com.yhtos.test.JsonTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-29T08:50:59" hostname="eternal-HP-Laptop-15q-bu1xx" time="0.142">
   <properties/>
-  <testcase name="testj" classname="com.yhtos.test.JsonTest" time="0.174"/>
+  <testcase name="testj" classname="com.yhtos.test.JsonTest" time="0.142"/>
   <system-out><![CDATA[Car{name='车辆名称', energ='能量', location='位置', state='状态', position='Position{x='12', y='56'}'}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -6,8 +6,14 @@ package com.star.tcs.util;
  * Creation time: 2020-6-28 10:43
  * Modification time：
  * Version： V1.0
+ *
+ * Modification time：2020-6-29 19:05
+ * Version： V1.1
+ * 完善log，填加创建订单专用回调监听
  */
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.paho.client.mqttv3.*;
 
 import java.io.IOException;
@@ -17,32 +23,30 @@ import java.util.UUID;
 
 public class MqttUtil {
 
-    private static String url;// = "tcp://127.0.0.1:1883";
+    private static String url;      // = "tcp://127.0.0.1:1883";
     private static String username;// = "admin";
     private static String password;// = "admin";
     //private static int qos;// = 0;
 
     private MqttClient client;          //客户端对象
     private MqttConnectOptions options; //
-
+    private static Logger logger = LogManager.getLogger(MqttUtil.class);
     /**
      * 功能：初始化
      * @param configFile
      */
     public static void init(String configFile) {
-        //String configFile = "database.properties";
         Properties params = new Properties();
         InputStream in = MqttUtil.class.getClassLoader().getResourceAsStream(configFile);
         try {
             params.load(in);
         } catch (IOException e) {
+            logger.info("配置文件解析异常");
             e.printStackTrace();
         }
         url=params.getProperty("url");
-        //id = params.getProperty("id");
         username = params.getProperty("username");
         password = params.getProperty("password");
-        //System.out.println("----MQTT " + url);
         //qos = Integer.parseInt(params.getProperty("qos"));
     }
 
@@ -91,9 +95,9 @@ public class MqttUtil {
             options = getOptions();
             client.setCallback(new SkyMqttCallback());
             client.connect(options);
-            System.out.println("----MQTT connection succeeded");
+            logger.info("---MQTT connection succeeded");
         } catch (MqttException e) {
-            System.out.println("----MQTT connection failed");
+            logger.info("---MQTT connection failed");
             e.printStackTrace();
         }
 
@@ -110,9 +114,9 @@ public class MqttUtil {
     public void subscribe(String topic, int qos){
         try {
             client.subscribe(topic,qos);
-            System.out.println("## * subscribe topic : :" + topic);
+            logger.info("订阅:" + topic);
         } catch (MqttException e) {
-            System.out.println("**** Topic subscription failed : :" + topic);
+            logger.info("***主题订阅失败:" + topic);
             e.printStackTrace();
         }
     }
@@ -126,10 +130,10 @@ public class MqttUtil {
         try {
             client.subscribe(topics,qos);
             for(String topic : topics){
-                System.out.println("## * subscribe topic : :" + topic);
+                logger.info("订阅:" + topic);
             }
         } catch (MqttException e) {
-            System.out.println("**** Topic subscription failed[] : :" + topics.toString());
+            logger.info("***主题订阅失败:" + topics.toString());
             e.printStackTrace();
         }
 
@@ -143,22 +147,21 @@ public class MqttUtil {
     public void subscribe(String topic,int qos, IMqttMessageListener messageListener){
         try {
             client.subscribe(topic, messageListener);
+            logger.info("订阅:" + topic);
         } catch (MqttException e) {
+            logger.info("***主题订阅失败:" + topic);
             e.printStackTrace();
         }
-        System.out.println("订阅dintyue  topic : :" + topic);
     }
-
-
 
 
     /************************************发布***********************************/
     public void publish(String topic, String payload, int qos){
         try {
             client.publish(topic, getMessage(payload, qos));
-            System.out.println("## * publish topic : :" + topic + "++++++++" + payload);
+            logger.info("发布:" + topic + "++" + payload);
         } catch (MqttException e) {
-            System.out.println("**** Topic publish failed : :" + topic);
+            logger.info("****发布异常:" + topic);
             e.printStackTrace();
         }
 
