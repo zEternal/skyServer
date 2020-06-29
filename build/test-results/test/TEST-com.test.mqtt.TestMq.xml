@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.test.mqtt.TestMq" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-29T07:29:49" hostname="eternal-HP-Laptop-15q-bu1xx" time="0.749">
+  <properties/>
+  <testcase name="tests" classname="com.test.mqtt.TestMq" time="0.749"/>
+  <system-out><![CDATA[----MQTT connection succeeded
+-----------------------
+订阅dintyue  topic : :kaim
+-+-MqttMessageListenerImpl--  Got the news
+-+-Topic==kaim
+-+-message==789
+--SkyMqttCallback--  Called after completing the message delivery and receiving all confirmations.
+## * publish topic : :kaim++++++++789
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

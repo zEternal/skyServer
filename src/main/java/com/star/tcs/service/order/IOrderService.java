@@ -9,4 +9,7 @@ package com.star.tcs.service.order;
  * version： V1.0
  */
 public interface IOrderService {
+
+
+
 }

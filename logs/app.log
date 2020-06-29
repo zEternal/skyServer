@@ -14,3 +14,17 @@
 2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQYKSRFA5K6SPFDERJ43RNS
 2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQY5EJFJH6D07ZP5GSZP07A
 2020-06-26 at 18:31:53 CST INFO  com.star.tcs.service.impl.StarTransportOrderService 128 getAllOrder - 订单：TOrder-01EBQXWPX82ESKKAR5WZFPA9M6
+2020-06-28 at 17:00:11 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBX2FJGY0J7KAF50GTNNCGRB
+2020-06-28 at 20:01:53 CST INFO  com.test.service.TestOrder 29 createLoad - order*****MyTransportOrder01EBXCW8TQ67ACYXJSAASDZBNE
+2020-06-28 at 20:01:53 CST INFO  com.test.service.TestOrder 33 createLoad - order2*****MyTransportOrder01EBXCW8VK8KVRF7KZ4928ACQT
+2020-06-28 at 20:03:05 CST INFO  com.test.service.TestOrder 29 createLoad - order*****MyTransportOrder01EBXCYFR72V45TMCATVA7R3G4
+2020-06-28 at 20:03:05 CST INFO  com.test.service.TestOrder 33 createLoad - order2*****MyTransportOrder01EBXCYFRZSRTED188BBDQCFT3
+2020-06-28 at 20:05:33 CST INFO  com.test.service.TestOrder 30 createLoad - order2*****MyTransportOrder01EBXD30JFWK8GX9680EJZPEGG
+2020-06-28 at 20:05:35 CST INFO  com.test.service.TestOrder 39 createLoad - order*****MyTransportOrder01EBXD32HTZ2D10G0SHX177KZB
+2020-06-28 at 20:09:29 CST INFO  com.test.service.TestOrder 30 createLoad - order2*****MyTransportOrder01EBXDA73PZQG8G08H148S2F7Y
+2020-06-28 at 20:09:32 CST INFO  com.test.service.TestOrder 39 createLoad - order*****MyTransportOrder01EBXDA92Z05Q0KSQPCXQ3G1FQ
+2020-06-28 at 20:27:53 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXEBWBW4RD4FQJ5CB9W4KCM
+2020-06-28 at 20:28:52 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXEDPNJJAR8N3JV34F8VDBX
+2020-06-28 at 20:29:15 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXEECX7H1YDT1GKCPTMZGN3
+2020-06-28 at 20:30:38 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXEGXVMD92MSSC1YCNQ8SQG
+2020-06-28 at 21:13:45 CST INFO  com.test.service.TestOrder 22 create - order*****MyTransportOrder01EBXGZWPBNSVFAXQ2Q5CE6SPF

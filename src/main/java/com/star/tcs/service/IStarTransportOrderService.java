@@ -7,6 +7,9 @@ package com.star.tcs.service;
  * Creation time: 2020-4-4 21:24
  * Modification time：
  * version： V1.0
+ *
+ * Modification time：2020-6-28  20：47
+ * V1.1
  */
 public interface IStarTransportOrderService {
 
@@ -25,6 +28,14 @@ public interface IStarTransportOrderService {
      * @return 订单名
      */
     public String requestToUnload(String locationName);
+
+    /**
+     * 创建连续订单，根据当前位置从数据库查找固定目的
+     * @param locationName  当前位置
+     * @param aims 目的位置
+     * @return
+     */
+    public String orderQueue(String locationName,String aims);
 
     /**
      * 功能：根据订单名称返回订单创建时间
